@@ -204,7 +204,6 @@ This audit report provides a comprehensive assessment of the E-Commerce Sales Pe
 | Recall | 100.00% | >80% | EXCEEDED |
 | F1-Score | 100.00% | >80% | EXCEEDED |
 | ROC-AUC | 1.0000 | >0.85 | EXCEEDED |
-| CV Accuracy | 100.00% | >80% | EXCEEDED |
 
 **Confusion Matrix:**
 ```
@@ -253,7 +252,6 @@ Actual  Active    1,133      0
 - Identify high-value customers for VIP programs
 - Marketing budget allocation by CLV segment
 - Customer acquisition cost benchmarking
-- Projected 12-month revenue: $4.28B (total portfolio)
 
 **Model Status:** PRODUCTION READY
 
@@ -630,7 +628,6 @@ Key Dependencies:
 - Scalability: Limited
 - Status: READY
 
-**Recommendation:** Deploy to Streamlit Cloud for portfolio/demo purposes.
 
 ---
 
@@ -764,7 +761,6 @@ The E-Commerce Sales Performance Analytics Platform is a **production-ready, pro
 - Interactive business intelligence dashboard
 - Actionable insights worth $8M+ in potential business impact
 
-**The system is approved for immediate deployment and portfolio presentation.**
 
 ---
 

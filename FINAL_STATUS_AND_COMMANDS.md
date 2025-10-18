@@ -172,7 +172,6 @@ open reports/plots/
 
 ---
 
-##  **For Your Resume - One-Liner:**
 
 ```
 Built end-to-end e-commerce analytics platform analyzing $32M+ transactions 
@@ -184,7 +183,6 @@ costs 22%.
 
 ---
 
-##  **Portfolio Screenshots Checklist:**
 
 Take these screenshots from the dashboard (http://localhost:8501):
 
@@ -246,7 +244,6 @@ python data/generate_data.py
 4. Deploy for FREE!
 5. Get a shareable link: `https://yourapp.streamlit.app`
 
-**Then add to your resume:** "Live demo: https://yourapp.streamlit.app"
 
 ---
 

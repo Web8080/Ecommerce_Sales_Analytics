@@ -167,7 +167,6 @@ Since the dashboard needs database access, you have these options:
 
 ### Option A: ElephantSQL (FREE Tier)
 
-**Best for:** Portfolio/Demo purposes
 
 1. Go to: https://www.elephantsql.com/
 2. Sign up (free tier: 20MB database)

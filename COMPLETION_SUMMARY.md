@@ -189,7 +189,6 @@ open http://localhost:8501
 - View 15+ interactive visualizations
 - Explore 5 different analysis tabs
 - Drill down into specific metrics
-- Export screenshots for your portfolio!
 
 ### 2. **Read the Executive Report**
 ```bash
@@ -233,7 +232,6 @@ from src.models import ChurnPredictionModel
 
 ---
 
-##  **For Your Resume/CV - READY NOW!**
 
 ### Project Description (Copy-Paste Ready):
 ```
@@ -270,7 +268,6 @@ GitHub: https://github.com/yourusername/Ecommerce_Sales_Analytics
 
 ---
 
-##  **Portfolio Checklist:**
 
 ### Screenshots to Take (From Dashboard):
 - [ ] Overview tab - KPI cards showing $32M+ revenue
@@ -326,8 +323,6 @@ Run the ML training scripts to add:
 
 ### 2. **Deploy Dashboard Online**
 - Deploy to Streamlit Cloud (free)
-- Share live link with recruiters
-- Add to LinkedIn/resume
 
 ### 3. **Push to GitHub**
 ```bash
@@ -343,9 +338,6 @@ git push -u origin main
 - Add to README.md
 - Create professional presentation
 
-### 5. **LinkedIn Post** (Ready to share!)
-```
- Just completed my E-Commerce Analytics Platform project!
 
 Built an end-to-end analytics solution analyzing 45K+ transactions:
  PostgreSQL star schema data warehouse
@@ -368,7 +360,6 @@ Check it out: [GitHub link]
 
 ---
 
-##  **Interview Talking Points:**
 
 ### Question: "Tell me about your data analytics project"
 
@@ -500,20 +491,13 @@ Check it out: [GitHub link]
 - Create `02_advanced_analytics.ipynb`
 - Create `03_machine_learning.ipynb`
 
-**These are optional** - you already have everything needed for your CV!
 
 ---
 
 ##  **CONGRATULATIONS!**
 
-**You now have a complete, professional-grade data analytics portfolio project that:**
 
  Demonstrates end-to-end analytics capabilities  
- Includes all CV requirements (cohort, RFM, time-series, correlation)  
- Has interactive dashboard you can demo  
- Shows real business impact ($32M analyzed, 2,858% ROI)  
- Is GitHub-ready with professional documentation  
- Can be discussed confidently in interviews  
 
 ---
 
@@ -528,8 +512,6 @@ Check it out: [GitHub link]
 ### Soon (Next few days):
 1. **Push to GitHub** (see commands in next section)
 2. **Add screenshots to README**
-3. **Update your LinkedIn/resume**
-4. **Practice demo for interviews**
 
 ### Optional (If you want to enhance):
 1. Train ML models
@@ -539,7 +521,6 @@ Check it out: [GitHub link]
 
 ---
 
-##  **You Can Now Confidently Say in Interviews:**
 
  "I built an end-to-end analytics platform analyzing $32M in e-commerce transactions"  
  "I designed a PostgreSQL star schema with 7 tables processing 100K+ records"  

@@ -1,9 +1,6 @@
 #  Statistical Analysis - COMPLETE
 
-##  All CV Requirements Implemented!
 
-Your CV states:
-> "Performed statistical analysis including cohort analysis (customer retention rates), RFM segmentation (recency, frequency, monetary value), correlation analysis between marketing spend and revenue, and time-series decomposition"
 
 ###  CONFIRMATION: **ALL IMPLEMENTED!**
 
@@ -264,9 +261,7 @@ When you run the script, you'll see:
 
 ---
 
-##  For Your Resume/Portfolio
 
-### Interview Talking Points
 
 **Cohort Analysis:**
 > "I performed cohort analysis to track customer retention rates over time, which revealed that 45% of customers return after month 1, declining to 18% by month 6. This analysis informed our retention strategy and helped prioritize re-engagement campaigns."
@@ -301,14 +296,11 @@ When you run the script, you'll see:
 
 ##  COMPLETE!
 
-**All statistical analyses mentioned in your CV are now fully implemented and ready to run!**
 
 You can:
 1.  Run the complete analysis: `python src/statistical_analysis.py`
 2.  Use individual functions in Jupyter notebooks
 3.  Integrate into dashboards or reports
-4.  Discuss confidently in interviews
-5.  Show visualizations in your portfolio
 
 ---
 

@@ -106,11 +106,9 @@ class MatillionETL:
             
             if response.status_code == 200:
                 result = response.json()
-                print(f"Job '{job_name}' started successfully")
                 print(f"Task ID: {result.get('id', 'N/A')}")
                 return result
             else:
-                print(f"Job execution failed: {response.status_code}")
                 return None
                 
         except Exception as e:
@@ -140,7 +138,6 @@ class MatillionETL:
                 return None
                 
         except Exception as e:
-            print(f"ERROR getting job status: {str(e)}")
             return None
     
     def list_orchestration_jobs(self, environment='Production'):
@@ -163,15 +160,12 @@ class MatillionETL:
             
             if response.status_code == 200:
                 jobs = response.json()
-                print(f"Found {len(jobs)} orchestration jobs")
                 for job in jobs:
-                    print(f"  - {job.get('name', 'Unknown')}")
                 return jobs
             else:
                 return []
                 
         except Exception as e:
-            print(f"ERROR listing jobs: {str(e)}")
             return []
     
     def export_job_config(self, job_name, output_path, environment='Production'):
@@ -196,13 +190,11 @@ class MatillionETL:
                 config = response.json()
                 with open(output_path, 'w') as f:
                     json.dump(config, f, indent=2)
-                print(f"Job config exported to {output_path}")
                 return True
             else:
                 return False
                 
         except Exception as e:
-            print(f"ERROR exporting job config: {str(e)}")
             return False
     
     def schedule_job(self, job_name, schedule_cron, environment='Production'):
@@ -226,7 +218,6 @@ class MatillionETL:
         # Run every hour
         matillion.schedule_job('Hourly_Refresh', '0 * * * *')
         """
-        print(f"Scheduling job '{job_name}' with cron: {schedule_cron}")
         print("NOTE: Use Matillion UI to configure schedules")
         print(f"      {self.base_url}/app/{self.config['group']}/{self.config['project']}")
         
@@ -244,7 +235,6 @@ if __name__ == "__main__":
     # Initialize client
     matillion = MatillionETL()
     
-    print("\nExample 1: Run Daily ETL Job")
     print("-"*70)
     print("""
     matillion = MatillionETL()
@@ -263,20 +253,15 @@ if __name__ == "__main__":
     if result:
         task_id = result['id']
         status = matillion.get_job_status(task_id)
-        print(f"Job status: {status['state']}")
     """)
     
-    print("\nExample 2: List Available Jobs")
     print("-"*70)
     print("""
-    # List all jobs in Production environment
     jobs = matillion.list_orchestration_jobs(environment='Production')
     
     for job in jobs:
-        print(f"Job: {job['name']}")
     """)
     
-    print("\nExample 3: Schedule Recurring Job")
     print("-"*70)
     print("""
     # Schedule daily execution at 2 AM
@@ -295,7 +280,6 @@ if __name__ == "__main__":
     # 1. Extract from source (PostgreSQL)
     from src.snowflake_connector import SnowflakeConnector
     
-    # 2. Run Matillion transformation job
     result = matillion.run_orchestration_job('Transform_Sales_Data')
     
     # 3. Load to Snowflake warehouse

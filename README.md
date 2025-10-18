@@ -208,7 +208,6 @@ Actual Active  1,133      0
 - Identify high-value customers for VIP programs
 - Marketing budget allocation by CLV segment
 - Customer acquisition cost benchmarking
-- Projected 12-month revenue: $4.28B (total portfolio)
 
 ### Model 3: Demand Forecasting
 
@@ -666,7 +665,6 @@ SELECT * FROM vw_customer_lifetime_value ORDER BY total_revenue DESC LIMIT 20;
 3. **Access**
    - Get public URL: `https://your-app.streamlit.app`
    - Share with stakeholders
-   - Add to resume/portfolio
 
 ### Alternative Deployment Options
 
@@ -714,9 +712,6 @@ CMD ["streamlit", "run", "dashboards/streamlit_app.py"]
 
 ## Contributing
 
-This is a portfolio project. For questions or collaboration:
-- GitHub Issues: https://github.com/Web8080/Ecommerce_Sales_Analytics/issues
-- Email: your.email@example.com
 
 ---
 
@@ -728,10 +723,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- **Project Type:** Data Analytics Portfolio Project
-- **Purpose:** Demonstrate end-to-end analytics capabilities
-- **Inspiration:** Real-world e-commerce business challenges
-- **Built With:** Python, PostgreSQL, Streamlit, scikit-learn, XGBoost
 
 ---
 

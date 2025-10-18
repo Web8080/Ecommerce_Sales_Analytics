@@ -349,7 +349,6 @@ python -m ipykernel install --user --name=ecommerce_env
 - Open http://localhost:8501
 - Try different filters
 - Explore all 5 tabs
-- Take screenshots for your portfolio!
 
 ### 2. Run Jupyter Notebooks
 - Open `01_data_cleaning_eda.ipynb`
@@ -391,9 +390,6 @@ python -m ipykernel install --user --name=ecommerce_env
 
 1. **Keep virtual environment activated** when working on the project
 2. **Commit to Git regularly** to track your progress
-3. **Take screenshots** of dashboard and visualizations for your CV
-4. **Document your insights** in notebooks
-5. **Experiment** with different models and parameters
 
 ---
 
@@ -421,6 +417,5 @@ You now have a fully functional e-commerce analytics platform!
 -  Analysis notebooks
 -  Professional project structure
 
-**Time to showcase it!** 
 
 

@@ -235,7 +235,6 @@ By building this project, you've gained experience with:
 
 ---
 
-##  For Your Resume/CV
 
 ### Project Title
 "End-to-End E-Commerce Sales Performance Analytics Platform"
@@ -269,7 +268,6 @@ Streamlit, Plotly, Jupyter, Statistical Analysis, Machine Learning, Data Visuali
 
 ---
 
-##  Portfolio Tips
 
 ### Screenshots to Take
 1. **Dashboard Overview Tab** - KPI cards and revenue trends
@@ -279,23 +277,12 @@ Streamlit, Plotly, Jupyter, Statistical Analysis, Machine Learning, Data Visuali
 5. **Jupyter Notebook** - EDA visualizations
 6. **ML Model Results** - Confusion matrix, accuracy metrics
 
-### Demo Talking Points
-- "Built end-to-end analytics platform analyzing 500K+ transactions"
-- "Designed star schema data warehouse in PostgreSQL"
-- "Developed interactive dashboard with Streamlit and Plotly"
-- "Created ML models achieving 82% accuracy for churn prediction"
-- "Identified insights driving 18% projected revenue increase"
-
----
-
 ##  Next Steps & Enhancements
 
 ### Ideas to Extend the Project
 
 1. **Deploy Dashboard Online**
    - Deploy to Streamlit Cloud (free)
-   - Share live link with recruiters
-   - Add custom domain
 
 2. **Add More ML Models**
    - Product recommendation system
@@ -345,7 +332,6 @@ Streamlit, Plotly, Jupyter, Statistical Analysis, Machine Learning, Data Visuali
 - [ ] **YOUR TODO**: Train ML models
 - [ ] **YOUR TODO**: Generate reports
 - [ ] **YOUR TODO**: Push to GitHub
-- [ ] **YOUR TODO**: Add to resume/LinkedIn
 
 ---
 
@@ -364,21 +350,8 @@ Streamlit, Plotly, Jupyter, Statistical Analysis, Machine Learning, Data Visuali
 
 ##  Final Notes
 
-**You now have a portfolio project that demonstrates:**
-- End-to-end data analytics skills
-- SQL and database design expertise
-- Machine learning implementation
-- Data visualization and storytelling
-- Business acumen and strategic thinking
-- Professional software development practices
 
-**This project is interview-ready!**
 
-When discussing in interviews, focus on:
-1. **Problem**: E-commerce company needs insights from sales data
-2. **Approach**: Built complete analytics platform (ETL → Analysis → ML → Visualization)
-3. **Results**: Identified actionable insights (18% revenue increase potential)
-4. **Skills**: Python, SQL, ML, dashboards, business analysis
 
 ---
 
@@ -392,8 +365,6 @@ Refer to:
 
 ---
 
-** CONGRATULATIONS! Your E-Commerce Analytics Platform is complete and ready to showcase! **
 
-**Time to add it to your resume, LinkedIn, and GitHub!**
 
 

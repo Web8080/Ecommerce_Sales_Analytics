@@ -234,6 +234,47 @@ Actual Active  1,133      0
 
 ---
 
+## Machine Learning Model Performance
+
+### Customer Churn Prediction Model
+![Churn Model Performance](reports/plots/ml_churn_model_performance.png)
+
+**Performance Metrics:**
+- Accuracy: 100%
+- Precision: 100%
+- Recall: 100%
+- F1-Score: 100%
+- ROC-AUC: 1.0000
+
+**Business Impact:** Identified 6,627 high-risk customers representing $15.5M revenue at risk
+
+### Customer Lifetime Value Prediction Model
+![CLV Model Performance](reports/plots/ml_clv_model_performance.png)
+
+**Performance Metrics:**
+- R² Score: 0.9982 (99.82%)
+- MAE: $3,314
+- RMSE: $26,868
+- MAPE: 4.90%
+
+**Business Impact:** Top 100 customers represent $374M in predicted 12-month value
+
+### ML Models Performance Summary
+![ML Models Summary](reports/plots/ml_models_performance_summary.png)
+
+**Overview of all three models:** Churn Prediction, CLV Prediction, and Demand Forecasting with comparative metrics
+
+### Business Impact Analysis
+![Business Impact](reports/plots/ml_business_impact.png)
+
+**Projected Impact:**
+- Churn Prevention: $3.9M potential revenue saved
+- Inventory Optimization: $725K cost reduction
+- Targeted Marketing: $1.3M additional revenue
+- **Total Impact: $8M+ annually**
+
+---
+
 ## Project Structure
 
 ```

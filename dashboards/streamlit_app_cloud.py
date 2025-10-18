@@ -178,7 +178,7 @@ with tab1:
     fig = px.line(daily_revenue, x='transaction_date', y='total_amount',
                   labels={'transaction_date': 'Date', 'total_amount': 'Revenue ($)'})
     fig.update_traces(line_color='#2E86AB', line_width=2)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 ### TAB 2: CUSTOMERS ###
 with tab2:
@@ -191,7 +191,7 @@ with tab2:
         segment_data = filtered_df.groupby('customer_segment')['total_amount'].sum().reset_index()
         fig = px.pie(segment_data, values='total_amount', names='customer_segment',
                      title='Revenue by Customer Segment')
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
     
     with col2:
         st.subheader("Top 20 Customers by Revenue")
@@ -202,7 +202,7 @@ with tab2:
         top_customers.columns = ['Customer ID', 'Total Revenue', 'Orders']
         top_customers = top_customers.nlargest(20, 'Total Revenue')
         top_customers['Total Revenue'] = top_customers['Total Revenue'].apply(lambda x: f"${x:,.2f}")
-        st.dataframe(top_customers, use_container_width=True, hide_index=True)
+        st.dataframe(top_customers, width='stretch', hide_index=True)
 
 ### TAB 3: PRODUCTS ###
 with tab3:
@@ -220,7 +220,7 @@ with tab3:
                      color_continuous_scale='Viridis')
         fig.update_xaxes(title_text="Revenue ($)")
         fig.update_yaxes(title_text="")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
     
     with col2:
         st.subheader("Category Performance Table")
@@ -232,7 +232,7 @@ with tab3:
         category_stats.columns = ['Category', 'Revenue', 'Orders', 'Units']
         category_stats = category_stats.sort_values('Revenue', ascending=False)
         category_stats['Revenue'] = category_stats['Revenue'].apply(lambda x: f"${x:,.2f}")
-        st.dataframe(category_stats, use_container_width=True, hide_index=True)
+        st.dataframe(category_stats, width='stretch', hide_index=True)
 
 ### TAB 4: GEOGRAPHY ###
 with tab4:
@@ -248,7 +248,7 @@ with tab4:
                      color_continuous_scale='Tealgrn')
         fig.update_xaxes(title_text="Country")
         fig.update_yaxes(title_text="Revenue ($)")
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
     
     with col2:
         st.subheader("Geographic Metrics")
@@ -260,7 +260,7 @@ with tab4:
         geo_metrics.columns = ['Country', 'Revenue', 'Orders', 'Customers']
         geo_metrics = geo_metrics.sort_values('Revenue', ascending=False)
         geo_metrics['Revenue'] = geo_metrics['Revenue'].apply(lambda x: f"${x:,.2f}")
-        st.dataframe(geo_metrics, use_container_width=True, hide_index=True)
+        st.dataframe(geo_metrics, width='stretch', hide_index=True)
 
 ### TAB 5: TRENDS ###
 with tab5:
@@ -277,7 +277,7 @@ with tab5:
                  color='total_amount',
                  color_continuous_scale='RdYlGn',
                  labels={'month_name': 'Month', 'total_amount': 'Total Revenue ($)'})
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 # Footer
 st.markdown("---")

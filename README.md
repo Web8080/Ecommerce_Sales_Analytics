@@ -239,54 +239,54 @@ Actual Active  1,133      0
 
 ```
 Ecommerce_Sales_Analytics/
-├── README.md                              # Complete documentation
-├── SYSTEM_AUDIT_REPORT.md                 # Comprehensive audit
-├── requirements.txt                       # Python dependencies
-├── config.py                              # Configuration management
-├── train_ml_models.py                     # ML model training script
-├── test_connection.py                     # Database diagnostic tool
-│
-├── data/
-│   ├── generate_data.py                  # Synthetic data generator
-│   ├── raw/                              # Generated CSV files
-│   │   ├── customers.csv                 # 50,000 customers
-│   │   ├── products.csv                  # 1,000 products
-│   │   ├── transactions.csv              # 45,958 transactions
-│   │   ├── returns.csv                   # 1,656 returns
-│   │   └── marketing_campaigns.csv       # 12 campaigns
-│   └── processed/                        # Analysis outputs
-│       ├── rfm_customer_segments.csv
-│       ├── campaign_roi_analysis.csv
-│       ├── high_risk_customers.csv
-│       └── high_value_customers.csv
-│
-├── database/
-│   ├── schema.sql                        # Star schema (7 tables, 3 views)
-│   └── load_data.py                      # Automated ETL pipeline
-│
-├── src/
-│   ├── models.py                         # ML model classes
-│   ├── utils.py                          # Utility functions
-│   ├── statistical_analysis.py           # Statistical analysis script
-│   ├── snowflake_connector.py            # Snowflake integration
-│   └── matillion_integration.py          # Matillion ETL integration
-│
-├── dashboards/
-│   ├── streamlit_app.py                  # Interactive dashboard
-│   └── dashboard_UI_SCREENSHOTS/         # Dashboard screenshots (8)
-│
-├── notebooks/
-│   └── 01_data_cleaning_eda.ipynb       # Analysis notebooks
-│
-├── reports/
-│   ├── generate_report.py                # Report automation
-│   ├── executive_summary_20251018.md     # Executive insights
-│   └── plots/                            # Statistical visualizations (4)
-│
-└── models/
-    ├── churn_prediction_model.pkl        # Trained models
-    ├── demand_forecast_model.pkl
-    └── clv_prediction_model.pkl
+ README.md                              # Complete documentation
+ SYSTEM_AUDIT_REPORT.md                 # Comprehensive audit
+ requirements.txt                       # Python dependencies
+ config.py                              # Configuration management
+ train_ml_models.py                     # ML model training script
+ test_connection.py                     # Database diagnostic tool
+
+ data/
+    generate_data.py                  # Synthetic data generator
+    raw/                              # Generated CSV files
+       customers.csv                 # 50,000 customers
+       products.csv                  # 1,000 products
+       transactions.csv              # 45,958 transactions
+       returns.csv                   # 1,656 returns
+       marketing_campaigns.csv       # 12 campaigns
+    processed/                        # Analysis outputs
+        rfm_customer_segments.csv
+        campaign_roi_analysis.csv
+        high_risk_customers.csv
+        high_value_customers.csv
+
+ database/
+    schema.sql                        # Star schema (7 tables, 3 views)
+    load_data.py                      # Automated ETL pipeline
+
+ src/
+    models.py                         # ML model classes
+    utils.py                          # Utility functions
+    statistical_analysis.py           # Statistical analysis script
+    snowflake_connector.py            # Snowflake integration
+    matillion_integration.py          # Matillion ETL integration
+
+ dashboards/
+    streamlit_app.py                  # Interactive dashboard
+    dashboard_UI_SCREENSHOTS/         # Dashboard screenshots (8)
+
+ notebooks/
+    01_data_cleaning_eda.ipynb       # Analysis notebooks
+
+ reports/
+    generate_report.py                # Report automation
+    executive_summary_20251018.md     # Executive insights
+    plots/                            # Statistical visualizations (4)
+
+ models/
+     churn_prediction_model.pkl        # Trained models
+     demand_forecast_model.pkl
+     clv_prediction_model.pkl
 ```
 
 ---

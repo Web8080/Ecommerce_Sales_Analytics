@@ -15,7 +15,7 @@ from datetime import datetime
 # Page configuration
 st.set_page_config(
     page_title="E-Commerce Analytics Dashboard",
-    page_icon="📊",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )

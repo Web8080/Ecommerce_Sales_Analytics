@@ -1,17 +1,17 @@
-# ✅ Statistical Analysis - COMPLETE
+#  Statistical Analysis - COMPLETE
 
-## 📊 All CV Requirements Implemented!
+##  All CV Requirements Implemented!
 
 Your CV states:
 > "Performed statistical analysis including cohort analysis (customer retention rates), RFM segmentation (recency, frequency, monetary value), correlation analysis between marketing spend and revenue, and time-series decomposition"
 
-### ✅ CONFIRMATION: **ALL IMPLEMENTED!**
+###  CONFIRMATION: **ALL IMPLEMENTED!**
 
 ---
 
-## 🎯 What's Been Built
+##  What's Been Built
 
-### 1. **Cohort Analysis (Customer Retention Rates)** ✅
+### 1. **Cohort Analysis (Customer Retention Rates)** 
 
 **Location:** `src/statistical_analysis.py` → `perform_cohort_analysis()`
 
@@ -33,7 +33,7 @@ Your CV states:
 
 ---
 
-### 2. **RFM Segmentation (Recency, Frequency, Monetary)** ✅
+### 2. **RFM Segmentation (Recency, Frequency, Monetary)** 
 
 **Location:** `src/statistical_analysis.py` → `perform_rfm_segmentation()`
 
@@ -61,7 +61,7 @@ Your CV states:
 
 ---
 
-### 3. **Time-Series Decomposition** ✅
+### 3. **Time-Series Decomposition** 
 
 **Location:** `src/statistical_analysis.py` → `perform_time_series_decomposition()`
 
@@ -81,12 +81,12 @@ Your CV states:
 **Example Insights:**
 - "Trend explains 45.3% of variance"
 - "Seasonality explains 32.8% of variance"
-- "Overall Trend: 📈 Increasing by 12.4%"
+- "Overall Trend:  Increasing by 12.4%"
 - "Weekly Pattern Detected: Revenue varies by $45,678 within week"
 
 ---
 
-### 4. **Marketing Spend vs Revenue Correlation** ✅
+### 4. **Marketing Spend vs Revenue Correlation** 
 
 **Location:** `src/statistical_analysis.py` → `perform_marketing_correlation_analysis()`
 
@@ -111,7 +111,7 @@ Your CV states:
 
 ---
 
-## 🚀 How to Run
+##  How to Run
 
 ### Option 1: Run Complete Statistical Analysis
 
@@ -175,7 +175,7 @@ cohort_retention = cohort_analysis(df, 'customer_id', 'transaction_date')
 
 ---
 
-## 📁 Generated Files
+##  Generated Files
 
 After running `python src/statistical_analysis.py`:
 
@@ -191,32 +191,32 @@ After running `python src/statistical_analysis.py`:
 
 ---
 
-## 📊 Sample Output
+##  Sample Output
 
 When you run the script, you'll see:
 
 ```
 ======================================================================
-📊 ADVANCED STATISTICAL ANALYSIS
+ ADVANCED STATISTICAL ANALYSIS
 ======================================================================
 
-1️⃣  COHORT ANALYSIS (Customer Retention Rates)
+1⃣  COHORT ANALYSIS (Customer Retention Rates)
 ----------------------------------------------------------------------
 
-📊 Cohort Retention Matrix (%):
+ Cohort Retention Matrix (%):
 ----------------------------------------------------------------------
 [Matrix showing retention rates by cohort and period]
 
-📈 Average Retention by Period:
+ Average Retention by Period:
 ----------------------------------------------------------------------
   Month 0: 100.0% of cohort returns
   Month 1: 45.2% of cohort returns
   Month 2: 32.8% of cohort returns
   ...
 
-✅ Cohort heatmap saved to: reports/plots/cohort_retention_heatmap.png
+ Cohort heatmap saved to: reports/plots/cohort_retention_heatmap.png
 
-💡 KEY INSIGHTS:
+ KEY INSIGHTS:
 ----------------------------------------------------------------------
   • Month 1 Retention: 45.2% of customers return
   • Month 3 Retention: 28.4% still active
@@ -225,7 +225,7 @@ When you run the script, you'll see:
 
 ======================================================================
 
-2️⃣  RFM SEGMENTATION (Recency, Frequency, Monetary Value)
+2⃣  RFM SEGMENTATION (Recency, Frequency, Monetary Value)
 ----------------------------------------------------------------------
 [RFM statistics and segment analysis]
 ...
@@ -233,7 +233,7 @@ When you run the script, you'll see:
 
 ---
 
-## ✅ Implementation Checklist
+##  Implementation Checklist
 
 - [x] **Cohort Analysis**
   - [x] Retention matrix calculation
@@ -264,7 +264,7 @@ When you run the script, you'll see:
 
 ---
 
-## 🎯 For Your Resume/Portfolio
+##  For Your Resume/Portfolio
 
 ### Interview Talking Points
 
@@ -282,7 +282,7 @@ When you run the script, you'll see:
 
 ---
 
-## 📚 Technical Details
+##  Technical Details
 
 ### Libraries Used
 - **pandas**: Data manipulation
@@ -299,16 +299,16 @@ When you run the script, you'll see:
 
 ---
 
-## 🎉 COMPLETE!
+##  COMPLETE!
 
 **All statistical analyses mentioned in your CV are now fully implemented and ready to run!**
 
 You can:
-1. ✅ Run the complete analysis: `python src/statistical_analysis.py`
-2. ✅ Use individual functions in Jupyter notebooks
-3. ✅ Integrate into dashboards or reports
-4. ✅ Discuss confidently in interviews
-5. ✅ Show visualizations in your portfolio
+1.  Run the complete analysis: `python src/statistical_analysis.py`
+2.  Use individual functions in Jupyter notebooks
+3.  Integrate into dashboards or reports
+4.  Discuss confidently in interviews
+5.  Show visualizations in your portfolio
 
 ---
 

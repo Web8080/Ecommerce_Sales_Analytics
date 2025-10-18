@@ -223,7 +223,7 @@ def calculate_churn_features(df, customer_col='customer_id', date_col='transacti
 def print_summary_stats(df, title="Summary Statistics"):
     """Print formatted summary statistics"""
     print("\n" + "="*70)
-    print(f"📊 {title}")
+    print(f" {title}")
     print("="*70)
     
     if 'total_amount' in df.columns:

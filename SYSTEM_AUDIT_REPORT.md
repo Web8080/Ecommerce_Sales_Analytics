@@ -376,12 +376,12 @@ Located in: `dashboards/dashboard_UI_SCREENSHOTS/`
 
 ```
 Project Structure: EXCELLENT
-├── Data Layer (data/, database/) - GOOD
-├── Business Logic (src/) - GOOD
-├── Presentation (dashboards/) - GOOD
-├── Analysis (notebooks/) - PARTIAL
-├── Reports (reports/) - GOOD
-└── Documentation - EXCELLENT
+ Data Layer (data/, database/) - GOOD
+ Business Logic (src/) - GOOD
+ Presentation (dashboards/) - GOOD
+ Analysis (notebooks/) - PARTIAL
+ Reports (reports/) - GOOD
+ Documentation - EXCELLENT
 ```
 
 **Strengths:**

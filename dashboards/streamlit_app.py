@@ -21,7 +21,7 @@ from config import DATABASE_URL, PATHS
 # Page configuration
 st.set_page_config(
     page_title="E-Commerce Analytics Dashboard",
-    page_icon="🛒",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -52,7 +52,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Title
-st.markdown('<div class="main-header">🛒 E-Commerce Sales Analytics Dashboard</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-header"> E-Commerce Sales Analytics Dashboard</div>', unsafe_allow_html=True)
 st.markdown("---")
 
 # Cache data loading
@@ -95,14 +95,14 @@ with st.spinner("Loading data..."):
         df = load_sales_data()
         customers_df = load_customer_data()
         products_df = load_product_data()
-        st.success("✅ Data loaded successfully!")
+        st.success(" Data loaded successfully!")
     except Exception as e:
-        st.error(f"❌ Error loading data: {str(e)}")
-        st.info("💡 Make sure PostgreSQL is running and data is loaded. Run: python data/generate_data.py && python database/load_data.py")
+        st.error(f" Error loading data: {str(e)}")
+        st.info(" Make sure PostgreSQL is running and data is loaded. Run: python data/generate_data.py && python database/load_data.py")
         st.stop()
 
 # Sidebar filters
-st.sidebar.header("🔍 Filters")
+st.sidebar.header(" Filters")
 
 # Date range filter
 date_range = st.sidebar.date_input(
@@ -149,12 +149,12 @@ st.sidebar.metric("Total Revenue", f"${filtered_df['total_amount'].sum():,.2f}")
 
 # Main Dashboard
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
-    "📊 Overview", "👥 Customers", "📦 Products", "🌍 Geography", "📈 Trends"
+    " Overview", " Customers", " Products", " Geography", " Trends"
 ])
 
 ### TAB 1: OVERVIEW ###
 with tab1:
-    st.header("📊 Business Overview")
+    st.header(" Business Overview")
     
     # KPI Cards
     col1, col2, col3, col4, col5 = st.columns(5)
@@ -187,7 +187,7 @@ with tab1:
     col1, col2 = st.columns(2)
     
     with col1:
-        st.subheader("📈 Revenue Trend")
+        st.subheader(" Revenue Trend")
         daily_revenue = filtered_df.groupby('transaction_date')['total_amount'].sum().reset_index()
         fig = px.line(daily_revenue, x='transaction_date', y='total_amount',
                       title='Daily Revenue',
@@ -197,7 +197,7 @@ with tab1:
         st.plotly_chart(fig, use_container_width=True)
     
     with col2:
-        st.subheader("📊 Orders Trend")
+        st.subheader(" Orders Trend")
         daily_orders = filtered_df.groupby('transaction_date')['transaction_id'].count().reset_index()
         fig = px.line(daily_orders, x='transaction_date', y='transaction_id',
                       title='Daily Orders',
@@ -207,7 +207,7 @@ with tab1:
         st.plotly_chart(fig, use_container_width=True)
     
     # Monthly Revenue and Profit
-    st.subheader("📊 Monthly Performance")
+    st.subheader(" Monthly Performance")
     filtered_df['year_month'] = filtered_df['transaction_date'].dt.to_period('M').astype(str)
     monthly = filtered_df.groupby('year_month').agg({
         'total_amount': 'sum',
@@ -234,7 +234,7 @@ with tab1:
 
 ### TAB 2: CUSTOMERS ###
 with tab2:
-    st.header("👥 Customer Analytics")
+    st.header(" Customer Analytics")
     
     # Customer Segment Analysis
     col1, col2 = st.columns(2)
@@ -261,7 +261,7 @@ with tab2:
         st.plotly_chart(fig, use_container_width=True)
     
     # Top Customers
-    st.subheader("💎 Top 20 Customers by Revenue")
+    st.subheader(" Top 20 Customers by Revenue")
     top_customers = filtered_df.groupby('customer_id').agg({
         'total_amount': 'sum',
         'transaction_id': 'count',
@@ -274,7 +274,7 @@ with tab2:
     st.dataframe(top_customers, use_container_width=True, hide_index=True)
     
     # Customer Lifetime Value Distribution
-    st.subheader("📊 Customer Lifetime Value Distribution")
+    st.subheader(" Customer Lifetime Value Distribution")
     if len(customers_df) > 0:
         fig = px.histogram(customers_df, x='total_revenue', nbins=50,
                            title='Distribution of Customer Lifetime Value',
@@ -284,7 +284,7 @@ with tab2:
 
 ### TAB 3: PRODUCTS ###
 with tab3:
-    st.header("📦 Product Performance")
+    st.header(" Product Performance")
     
     # Category Performance
     col1, col2 = st.columns(2)
@@ -318,7 +318,7 @@ with tab3:
         st.plotly_chart(fig, use_container_width=True)
     
     # Product Performance Table
-    st.subheader("🏆 Top 50 Products by Revenue")
+    st.subheader(" Top 50 Products by Revenue")
     if len(products_df) > 0:
         top_products = products_df.nlargest(50, 'total_revenue')
         top_products_display = top_products[['product_name', 'category', 'total_revenue', 
@@ -329,7 +329,7 @@ with tab3:
         st.dataframe(top_products_display, use_container_width=True, hide_index=True)
     
     # Units Sold by Category
-    st.subheader("📊 Units Sold by Category")
+    st.subheader(" Units Sold by Category")
     category_units = filtered_df.groupby('category')['quantity'].sum().reset_index()
     category_units = category_units.nlargest(15, 'quantity')
     fig = px.treemap(category_units, path=['category'], values='quantity',
@@ -340,7 +340,7 @@ with tab3:
 
 ### TAB 4: GEOGRAPHY ###
 with tab4:
-    st.header("🌍 Geographic Analysis")
+    st.header(" Geographic Analysis")
     
     col1, col2 = st.columns(2)
     
@@ -365,7 +365,7 @@ with tab4:
         st.plotly_chart(fig, use_container_width=True)
     
     # Geographic Metrics Table
-    st.subheader("📊 Geographic Performance Metrics")
+    st.subheader(" Geographic Performance Metrics")
     geo_metrics = filtered_df.groupby('country').agg({
         'total_amount': 'sum',
         'transaction_id': 'count',
@@ -382,10 +382,10 @@ with tab4:
 
 ### TAB 5: TRENDS ###
 with tab5:
-    st.header("📈 Trends & Seasonality")
+    st.header(" Trends & Seasonality")
     
     # Seasonality Analysis
-    st.subheader("📅 Monthly Seasonality")
+    st.subheader(" Monthly Seasonality")
     filtered_df['month'] = filtered_df['transaction_date'].dt.month
     month_names = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -401,7 +401,7 @@ with tab5:
     st.plotly_chart(fig, use_container_width=True)
     
     # Day of Week Analysis
-    st.subheader("📆 Day of Week Performance")
+    st.subheader(" Day of Week Performance")
     dow_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     filtered_df['day_of_week'] = filtered_df['transaction_date'].dt.dayofweek
     dow_data = filtered_df.groupby('day_of_week')['total_amount'].sum().reset_index()
@@ -415,7 +415,7 @@ with tab5:
     st.plotly_chart(fig, use_container_width=True)
     
     # Payment Method Trends
-    st.subheader("💳 Payment Method Trends")
+    st.subheader(" Payment Method Trends")
     col1, col2 = st.columns(2)
     
     with col1:
@@ -438,7 +438,7 @@ with tab5:
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #666; padding: 20px;'>
-    <p>🛒 E-Commerce Sales Analytics Platform | Built with Streamlit & PostgreSQL</p>
+    <p> E-Commerce Sales Analytics Platform | Built with Streamlit & PostgreSQL</p>
     <p>Data refreshes every 10 minutes | Last updated: {}</p>
 </div>
 """.format(datetime.now().strftime("%Y-%m-%d %H:%M:%S")), unsafe_allow_html=True)

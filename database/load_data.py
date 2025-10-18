@@ -14,7 +14,7 @@ from datetime import datetime
 sys.path.append(str(Path(__file__).parent.parent))
 from config import DATABASE_URL, PATHS
 
-print("🚀 Starting Data Loading Pipeline...")
+print(" Starting Data Loading Pipeline...")
 print(f"Database: {DATABASE_URL.split('@')[1]}\n")  # Hide password
 
 
@@ -31,12 +31,12 @@ def create_db_engine():
         with engine.connect() as conn:
             result = conn.execute(text("SELECT 1"))
             result.fetchone()  # Consume the result
-        print("✅ Database connection established\n")
+        print(" Database connection established\n")
         return engine
     except Exception as e:
-        print(f"❌ Database connection failed: {str(e)}")
+        print(f" Database connection failed: {str(e)}")
         print(f"   Error type: {type(e).__name__}")
-        print("\n💡 Troubleshooting:")
+        print("\n Troubleshooting:")
         print("   1. Make sure PostgreSQL is running: pg_isready")
         print("   2. Check .env file exists with correct credentials")
         print("   3. Create database: createdb ecommerce_analytics")
@@ -48,7 +48,7 @@ def create_db_engine():
 
 def load_dimension_customers(engine):
     """Load customer dimension"""
-    print("📊 Loading dim_customers...")
+    print(" Loading dim_customers...")
     
     # Read CSV
     df = pd.read_csv(PATHS['data_raw'] / 'customers.csv')
@@ -59,13 +59,13 @@ def load_dimension_customers(engine):
     
     df_db.to_sql('dim_customers', engine, if_exists='append', index=False, method='multi')
     
-    print(f"   ✓ Loaded {len(df):,} customers\n")
+    print(f"    Loaded {len(df):,} customers\n")
     return df
 
 
 def load_dimension_products(engine):
     """Load product dimension"""
-    print("📦 Loading dim_products...")
+    print(" Loading dim_products...")
     
     # Read CSV
     df = pd.read_csv(PATHS['data_raw'] / 'products.csv')
@@ -77,13 +77,13 @@ def load_dimension_products(engine):
     
     df_db.to_sql('dim_products', engine, if_exists='append', index=False, method='multi')
     
-    print(f"   ✓ Loaded {len(df):,} products\n")
+    print(f"    Loaded {len(df):,} products\n")
     return df
 
 
 def load_dimension_geography(engine, transactions_df, customers_df):
     """Load geography dimension from transactions and customers"""
-    print("🌍 Loading dim_geography...")
+    print(" Loading dim_geography...")
     
     # Extract unique geography combinations
     geo_data = []
@@ -111,13 +111,13 @@ def load_dimension_geography(engine, transactions_df, customers_df):
     # Insert into database
     df.to_sql('dim_geography', engine, if_exists='append', index=False, method='multi')
     
-    print(f"   ✓ Loaded {len(df):,} geography records\n")
+    print(f"    Loaded {len(df):,} geography records\n")
     return df
 
 
 def load_dimension_marketing(engine):
     """Load marketing campaigns dimension"""
-    print("📢 Loading dim_marketing_campaigns...")
+    print(" Loading dim_marketing_campaigns...")
     
     # Read CSV
     df = pd.read_csv(PATHS['data_raw'] / 'marketing_campaigns.csv')
@@ -129,13 +129,13 @@ def load_dimension_marketing(engine):
     
     df_db.to_sql('dim_marketing_campaigns', engine, if_exists='append', index=False, method='multi')
     
-    print(f"   ✓ Loaded {len(df):,} marketing campaigns\n")
+    print(f"    Loaded {len(df):,} marketing campaigns\n")
     return df
 
 
 def load_fact_sales(engine):
     """Load sales fact table"""
-    print("💳 Loading fact_sales...")
+    print(" Loading fact_sales...")
     
     # Read transactions CSV
     df = pd.read_csv(PATHS['data_raw'] / 'transactions.csv')
@@ -206,15 +206,15 @@ def load_fact_sales(engine):
         batch.to_sql('fact_sales', engine, if_exists='append', index=False, method='multi')
         
         batch_num = (i // batch_size) + 1
-        print(f"   ✓ Loaded batch {batch_num}/{total_batches} ({len(batch):,} records)")
+        print(f"    Loaded batch {batch_num}/{total_batches} ({len(batch):,} records)")
     
-    print(f"   ✓ Total loaded: {len(fact_df):,} sales records\n")
+    print(f"    Total loaded: {len(fact_df):,} sales records\n")
     return df
 
 
 def load_fact_returns(engine):
     """Load returns fact table"""
-    print("🔄 Loading fact_returns...")
+    print(" Loading fact_returns...")
     
     # Read returns CSV
     df = pd.read_csv(PATHS['data_raw'] / 'returns.csv')
@@ -259,13 +259,13 @@ def load_fact_returns(engine):
     # Load to database
     fact_df.to_sql('fact_returns', engine, if_exists='append', index=False, method='multi')
     
-    print(f"   ✓ Loaded {len(fact_df):,} returns records\n")
+    print(f"    Loaded {len(fact_df):,} returns records\n")
     return df
 
 
 def verify_data_load(engine):
     """Verify data was loaded correctly"""
-    print("🔍 Verifying data load...\n")
+    print(" Verifying data load...\n")
     
     with engine.connect() as conn:
         tables = [
@@ -276,7 +276,7 @@ def verify_data_load(engine):
         for table in tables:
             result = conn.execute(text(f"SELECT COUNT(*) FROM {table}"))
             count = result.fetchone()[0]
-            print(f"   ✓ {table}: {count:,} records")
+            print(f"    {table}: {count:,} records")
     
     print("\n" + "="*60)
     
@@ -292,7 +292,7 @@ def verify_data_load(engine):
         """))
         
         row = result.fetchone()
-        print(f"\n📊 SALES SUMMARY:")
+        print(f"\n SALES SUMMARY:")
         print(f"   Total Completed Sales: {row[0]:,}")
         print(f"   Total Revenue: ${row[1]:,.2f}")
         print(f"   Avg Transaction: ${row[2]:.2f}")
@@ -330,10 +330,10 @@ def main():
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
         
-        print("✅ DATA LOADING COMPLETED SUCCESSFULLY!")
-        print(f"⏱️  Time taken: {duration:.2f} seconds\n")
+        print(" DATA LOADING COMPLETED SUCCESSFULLY!")
+        print(f"⏱  Time taken: {duration:.2f} seconds\n")
         
-        print("🎯 Next steps:")
+        print(" Next steps:")
         print("   1. Run analysis notebooks: jupyter notebook notebooks/")
         print("   2. Launch dashboard: streamlit run dashboards/streamlit_app.py")
         print("   3. View analytics: Open notebooks/01_data_cleaning_eda.ipynb\n")
@@ -341,7 +341,7 @@ def main():
         return True
         
     except Exception as e:
-        print(f"\n❌ ERROR: {str(e)}")
+        print(f"\n ERROR: {str(e)}")
         import traceback
         traceback.print_exc()
         return False

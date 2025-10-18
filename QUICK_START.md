@@ -1,4 +1,4 @@
-# ⚡ Quick Start Guide (5 Minutes)
+#  Quick Start Guide (5 Minutes)
 
 Get the project running in 5 simple commands!
 
@@ -10,9 +10,9 @@ Get the project running in 5 simple commands!
 
 ---
 
-## 🚀 5-Step Quick Start
+##  5-Step Quick Start
 
-### 1️⃣ Setup Environment
+### 1⃣ Setup Environment
 ```bash
 cd /Users/user/End-to-End_E-Commerce_Sales_Performance_Analytics_Platform
 python3 -m venv venv
@@ -20,7 +20,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Configure Database
+### 2⃣ Configure Database
 ```bash
 # Create .env file with your credentials
 cat > .env << 'EOL'
@@ -40,28 +40,28 @@ DASHBOARD_PORT=8501
 EOL
 ```
 
-### 3️⃣ Create Database & Schema
+### 3⃣ Create Database & Schema
 ```bash
 createdb ecommerce_analytics
 psql -U postgres -d ecommerce_analytics -f database/schema.sql
 ```
 
-### 4️⃣ Generate & Load Data
+### 4⃣ Generate & Load Data
 ```bash
 python data/generate_data.py
 python database/load_data.py
 ```
 
-### 5️⃣ Launch Dashboard
+### 5⃣ Launch Dashboard
 ```bash
 streamlit run dashboards/streamlit_app.py
 ```
 
-**Done!** Open http://localhost:8501 🎉
+**Done!** Open http://localhost:8501 
 
 ---
 
-## ⏱️ Expected Time
+## ⏱ Expected Time
 - Step 1: ~5 minutes (package installation)
 - Step 2: ~30 seconds
 - Step 3: ~30 seconds
@@ -72,17 +72,17 @@ streamlit run dashboards/streamlit_app.py
 
 ---
 
-## 🎯 What You Get
+##  What You Get
 
-✅ **500K+ transactions** in PostgreSQL  
-✅ **Interactive dashboard** with 15+ visualizations  
-✅ **Star schema** data warehouse  
-✅ **ML models** ready to train  
-✅ **Jupyter notebooks** for analysis  
+ **500K+ transactions** in PostgreSQL  
+ **Interactive dashboard** with 15+ visualizations  
+ **Star schema** data warehouse  
+ **ML models** ready to train  
+ **Jupyter notebooks** for analysis  
 
 ---
 
-## 📊 Verify Setup
+##  Verify Setup
 
 ```bash
 # Check database
@@ -93,7 +93,7 @@ psql -U postgres -d ecommerce_analytics -c "SELECT COUNT(*) FROM fact_sales;"
 
 ---
 
-## 🐛 Quick Troubleshooting
+##  Quick Troubleshooting
 
 **PostgreSQL not running?**
 ```bash
@@ -110,7 +110,7 @@ brew services start postgresql@14
 
 ---
 
-## 🎓 Next Steps
+##  Next Steps
 
 1. **Explore Dashboard** - Try all filters and visualizations
 2. **Open Jupyter** - `jupyter notebook` → Open `01_data_cleaning_eda.ipynb`

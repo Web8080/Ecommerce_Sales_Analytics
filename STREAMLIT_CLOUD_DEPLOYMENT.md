@@ -146,7 +146,7 @@ DB_HOST = "127.0.0.1"
 DB_PORT = "5432"
 DB_NAME = "ecommerce_analytics"
 DB_USER = "postgres"
-DB_PASSWORD = "NTU99999@"
+DB_PASSWORD = ""
 ```
 
 **IMPORTANT:** For cloud deployment, you'll need:
@@ -275,38 +275,9 @@ Add your live URL to README.md:
 **Interactive Dashboard:** https://your-app-name.streamlit.app
 ```
 
-### 6.4 Share Your Project
-
-Update your:
-- **LinkedIn:** Post with live link
-- **Resume:** Add dashboard URL
-- **GitHub README:** Badge with live demo link
 
 ---
 
-## Recommended Approach for Portfolio
-
-**For Resume/Portfolio (Recommended):**
-
-### Option 1: Cloud Database + Streamlit Cloud
-- **Pros:** Full functionality, impressive demo
-- **Cons:** Requires cloud database setup
-- **Time:** 30-45 minutes
-- **Cost:** FREE (using free tiers)
-
-### Option 2: CSV + Streamlit Cloud
-- **Pros:** Quick deployment, no database needed
-- **Cons:** Limited functionality
-- **Time:** 10-15 minutes
-- **Cost:** FREE
-
-### Option 3: Video Demo + GitHub Only
-- **Pros:** Showcases everything, no ongoing costs
-- **Cons:** Not interactive for viewers
-- **Time:** 20 minutes (record demo)
-- **Cost:** FREE
-
-**My Recommendation:** Option 2 (CSV + Streamlit Cloud) for quick portfolio showcase, then upgrade to Option 1 if interviewing seriously.
 
 ---
 
@@ -355,7 +326,6 @@ Update your:
 - [ ] All tabs tested and working
 - [ ] Custom URL configured (optional)
 - [ ] README updated with live link
-- [ ] Shared on LinkedIn/resume
 
 ---
 
@@ -409,17 +379,14 @@ Update your:
 
 ## Summary
 
-**Your app is ready for deployment!**
+** app is ready for deployment!**
 
 **Quick Steps:**
 1. Sign in to Streamlit Cloud
 2. Connect GitHub repo
 3. Configure secrets (or use CSV)
 4. Deploy
-5. Share link on resume/LinkedIn
 
-**Expected Result:**  
-Live, interactive dashboard at: `https://your-app-name.streamlit.app`
 
 ---
 

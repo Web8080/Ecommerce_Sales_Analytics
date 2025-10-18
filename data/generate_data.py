@@ -25,13 +25,13 @@ Faker.seed(42)
 np.random.seed(42)
 random.seed(42)
 
-print("🚀 Starting E-Commerce Data Generation...")
+print(" Starting E-Commerce Data Generation...")
 print(f"Target: {DATA_CONFIG['num_customers']:,} customers, {DATA_CONFIG['num_products']:,} products, {DATA_CONFIG['num_transactions']:,} transactions\n")
 
 
 def generate_customers(n=50000):
     """Generate customer data with realistic attributes"""
-    print(f"📊 Generating {n:,} customers...")
+    print(f" Generating {n:,} customers...")
     
     customers = []
     for i in range(n):
@@ -56,21 +56,21 @@ def generate_customers(n=50000):
         customers.append(customer)
         
         if (i + 1) % 10000 == 0:
-            print(f"  ✓ Generated {i+1:,} customers")
+            print(f"   Generated {i+1:,} customers")
     
     df = pd.DataFrame(customers)
     
     # Save to CSV
     output_path = PATHS['data_raw'] / 'customers.csv'
     df.to_csv(output_path, index=False)
-    print(f"✅ Saved to {output_path}\n")
+    print(f" Saved to {output_path}\n")
     
     return df
 
 
 def generate_products(n=1000):
     """Generate product catalog with categories and pricing"""
-    print(f"📦 Generating {n:,} products...")
+    print(f" Generating {n:,} products...")
     
     products = []
     for i in range(n):
@@ -110,21 +110,21 @@ def generate_products(n=1000):
         products.append(product)
         
         if (i + 1) % 200 == 0:
-            print(f"  ✓ Generated {i+1:,} products")
+            print(f"   Generated {i+1:,} products")
     
     df = pd.DataFrame(products)
     
     # Save to CSV
     output_path = PATHS['data_raw'] / 'products.csv'
     df.to_csv(output_path, index=False)
-    print(f"✅ Saved to {output_path}\n")
+    print(f" Saved to {output_path}\n")
     
     return df
 
 
 def generate_transactions(customers_df, products_df, n=500000):
     """Generate transaction data with realistic patterns"""
-    print(f"💳 Generating {n:,} transactions...")
+    print(f" Generating {n:,} transactions...")
     
     start_date = datetime.strptime(DATA_CONFIG['start_date'], '%Y-%m-%d')
     end_date = datetime.strptime(DATA_CONFIG['end_date'], '%Y-%m-%d')
@@ -225,7 +225,7 @@ def generate_transactions(customers_df, products_df, n=500000):
                 transaction_id += 1
                 
                 if transaction_id % 50000 == 0:
-                    print(f"  ✓ Generated {transaction_id:,} transactions")
+                    print(f"   Generated {transaction_id:,} transactions")
                 
                 if transaction_id > n:
                     break
@@ -246,14 +246,14 @@ def generate_transactions(customers_df, products_df, n=500000):
     # Save to CSV
     output_path = PATHS['data_raw'] / 'transactions.csv'
     df.to_csv(output_path, index=False)
-    print(f"✅ Saved to {output_path}\n")
+    print(f" Saved to {output_path}\n")
     
     return df
 
 
 def generate_returns(transactions_df):
     """Generate return/refund data"""
-    print("🔄 Generating returns data...")
+    print(" Generating returns data...")
     
     # Select ~4% of completed transactions to be returned
     completed = transactions_df[transactions_df['order_status'] == 'Completed']
@@ -283,7 +283,7 @@ def generate_returns(transactions_df):
     # Save to CSV
     output_path = PATHS['data_raw'] / 'returns.csv'
     df.to_csv(output_path, index=False)
-    print(f"✅ Saved to {output_path}")
+    print(f" Saved to {output_path}")
     print(f"   Generated {len(returns):,} returns\n")
     
     return df
@@ -291,7 +291,7 @@ def generate_returns(transactions_df):
 
 def generate_marketing_campaigns():
     """Generate marketing campaign data"""
-    print("📢 Generating marketing campaigns...")
+    print(" Generating marketing campaigns...")
     
     campaigns = []
     campaign_names = [
@@ -323,7 +323,7 @@ def generate_marketing_campaigns():
     # Save to CSV
     output_path = PATHS['data_raw'] / 'marketing_campaigns.csv'
     df.to_csv(output_path, index=False)
-    print(f"✅ Saved to {output_path}\n")
+    print(f" Saved to {output_path}\n")
     
     return df
 
@@ -331,19 +331,19 @@ def generate_marketing_campaigns():
 def generate_summary_stats(customers_df, products_df, transactions_df, returns_df):
     """Generate and display summary statistics"""
     print("\n" + "="*60)
-    print("📊 DATA GENERATION SUMMARY")
+    print(" DATA GENERATION SUMMARY")
     print("="*60)
     
-    print(f"\n✅ Customers: {len(customers_df):,}")
+    print(f"\n Customers: {len(customers_df):,}")
     print(f"   - VIP: {len(customers_df[customers_df['customer_segment']=='VIP']):,}")
     print(f"   - Regular: {len(customers_df[customers_df['customer_segment']=='Regular']):,}")
     print(f"   - Occasional: {len(customers_df[customers_df['customer_segment']=='Occasional']):,}")
     
-    print(f"\n✅ Products: {len(products_df):,}")
+    print(f"\n Products: {len(products_df):,}")
     print(f"   - Categories: {products_df['category'].nunique()}")
     print(f"   - Avg Price: ${products_df['price'].mean():.2f}")
     
-    print(f"\n✅ Transactions: {len(transactions_df):,}")
+    print(f"\n Transactions: {len(transactions_df):,}")
     print(f"   - Date Range: {transactions_df['transaction_date'].min()} to {transactions_df['transaction_date'].max()}")
     print(f"   - Total Revenue: ${transactions_df['total_amount'].sum():,.2f}")
     print(f"   - Avg Transaction: ${transactions_df['total_amount'].mean():.2f}")
@@ -352,11 +352,11 @@ def generate_summary_stats(customers_df, products_df, transactions_df, returns_d
     print(f"     • Returned: {len(transactions_df[transactions_df['order_status']=='Returned']):,}")
     print(f"     • Cancelled: {len(transactions_df[transactions_df['order_status']=='Cancelled']):,}")
     
-    print(f"\n✅ Returns: {len(returns_df):,}")
+    print(f"\n Returns: {len(returns_df):,}")
     print(f"   - Return Rate: {len(returns_df)/len(transactions_df[transactions_df['order_status']=='Completed'])*100:.2f}%")
     
     # Missing data summary
-    print(f"\n📋 DATA QUALITY (Missing Values):")
+    print(f"\n DATA QUALITY (Missing Values):")
     for df_name, df in [('Customers', customers_df), ('Products', products_df), ('Transactions', transactions_df)]:
         missing_pct = (df.isnull().sum() / len(df) * 100).round(2)
         missing_cols = missing_pct[missing_pct > 0]
@@ -366,7 +366,7 @@ def generate_summary_stats(customers_df, products_df, transactions_df, returns_d
                 print(f"     • {col}: {pct}%")
     
     print(f"\n{'='*60}")
-    print("✅ DATA GENERATION COMPLETED SUCCESSFULLY!")
+    print(" DATA GENERATION COMPLETED SUCCESSFULLY!")
     print(f"{'='*60}\n")
 
 
@@ -383,13 +383,13 @@ def main():
         # Generate summary
         generate_summary_stats(customers_df, products_df, transactions_df, returns_df)
         
-        print("🎉 All data files generated successfully!")
-        print(f"📁 Location: {PATHS['data_raw']}\n")
+        print(" All data files generated successfully!")
+        print(f" Location: {PATHS['data_raw']}\n")
         
         return True
         
     except Exception as e:
-        print(f"\n❌ ERROR: {str(e)}")
+        print(f"\n ERROR: {str(e)}")
         import traceback
         traceback.print_exc()
         return False

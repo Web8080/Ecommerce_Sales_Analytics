@@ -25,7 +25,7 @@ from src.utils import calculate_rfm, cohort_analysis
 (PATHS['reports'] / 'plots').mkdir(parents=True, exist_ok=True)
 
 print("="*70)
-print("📊 ADVANCED STATISTICAL ANALYSIS")
+print(" ADVANCED STATISTICAL ANALYSIS")
 print("="*70 + "\n")
 
 
@@ -34,7 +34,7 @@ def perform_cohort_analysis():
     Cohort Analysis - Customer Retention Rates
     Shows how many customers return each month after their first purchase
     """
-    print("1️⃣  COHORT ANALYSIS (Customer Retention Rates)")
+    print("1⃣  COHORT ANALYSIS (Customer Retention Rates)")
     print("-" * 70)
     
     # Load data
@@ -46,13 +46,13 @@ def perform_cohort_analysis():
     # Perform cohort analysis
     cohort_retention = cohort_analysis(df, 'customer_id', 'transaction_date')
     
-    print("\n📊 Cohort Retention Matrix (%):")
+    print("\n Cohort Retention Matrix (%):")
     print("-" * 70)
     print(cohort_retention.round(1).head(12))  # Show first 12 months
     
     # Calculate average retention rates
     avg_retention = cohort_retention.mean()
-    print(f"\n📈 Average Retention by Period:")
+    print(f"\n Average Retention by Period:")
     print("-" * 70)
     for period in range(min(6, len(avg_retention))):
         if period in avg_retention.index:
@@ -69,7 +69,7 @@ def perform_cohort_analysis():
     plt.ylabel('Cohort (First Purchase Month)', fontsize=12)
     plt.tight_layout()
     plt.savefig(PATHS['reports'] / 'plots' / 'cohort_retention_heatmap.png', dpi=300, bbox_inches='tight')
-    print(f"\n✅ Cohort heatmap saved to: {PATHS['reports'] / 'plots' / 'cohort_retention_heatmap.png'}")
+    print(f"\n Cohort heatmap saved to: {PATHS['reports'] / 'plots' / 'cohort_retention_heatmap.png'}")
     plt.close()
     
     # Key insights
@@ -77,7 +77,7 @@ def perform_cohort_analysis():
     month_3_retention = avg_retention[3] if 3 in avg_retention.index else 0
     month_6_retention = avg_retention[6] if 6 in avg_retention.index else 0
     
-    print(f"\n💡 KEY INSIGHTS:")
+    print(f"\n KEY INSIGHTS:")
     print("-" * 70)
     print(f"  • Month 1 Retention: {month_1_retention:.1f}% of customers return")
     print(f"  • Month 3 Retention: {month_3_retention:.1f}% still active")
@@ -93,7 +93,7 @@ def perform_rfm_segmentation():
     RFM Segmentation - Customer Value Analysis
     Segments customers based on Recency, Frequency, and Monetary value
     """
-    print("2️⃣  RFM SEGMENTATION (Recency, Frequency, Monetary Value)")
+    print("2⃣  RFM SEGMENTATION (Recency, Frequency, Monetary Value)")
     print("-" * 70)
     
     # Load data
@@ -105,7 +105,7 @@ def perform_rfm_segmentation():
     # Calculate RFM scores
     rfm = calculate_rfm(df, 'customer_id', 'transaction_date', 'total_amount')
     
-    print("\n📊 RFM Summary Statistics:")
+    print("\n RFM Summary Statistics:")
     print("-" * 70)
     print(rfm[['recency', 'frequency', 'monetary']].describe().round(2))
     
@@ -113,7 +113,7 @@ def perform_rfm_segmentation():
     segment_dist = rfm['segment'].value_counts()
     segment_pct = (segment_dist / len(rfm) * 100).round(1)
     
-    print(f"\n📈 Customer Segments Distribution:")
+    print(f"\n Customer Segments Distribution:")
     print("-" * 70)
     for segment, count in segment_dist.items():
         pct = segment_pct[segment]
@@ -162,14 +162,14 @@ def perform_rfm_segmentation():
     
     plt.tight_layout()
     plt.savefig(PATHS['reports'] / 'plots' / 'rfm_segmentation_analysis.png', dpi=300, bbox_inches='tight')
-    print(f"\n✅ RFM analysis saved to: {PATHS['reports'] / 'plots' / 'rfm_segmentation_analysis.png'}")
+    print(f"\n RFM analysis saved to: {PATHS['reports'] / 'plots' / 'rfm_segmentation_analysis.png'}")
     plt.close()
     
     # Key insights
     champions = rfm[rfm['segment'] == 'Champions']
     at_risk = rfm[rfm['segment'] == 'At Risk']
     
-    print(f"\n💡 KEY INSIGHTS:")
+    print(f"\n KEY INSIGHTS:")
     print("-" * 70)
     print(f"  • Champions: {len(champions):,} customers ({len(champions)/len(rfm)*100:.1f}%) generating ${champions['monetary'].sum():,.2f}")
     print(f"  • At Risk: {len(at_risk):,} customers ({len(at_risk)/len(rfm)*100:.1f}%) worth ${at_risk['monetary'].sum():,.2f}")
@@ -179,7 +179,7 @@ def perform_rfm_segmentation():
     
     # Save RFM data
     rfm.to_csv(PATHS['data_processed'] / 'rfm_customer_segments.csv', index=False)
-    print(f"✅ RFM data saved to: {PATHS['data_processed'] / 'rfm_customer_segments.csv'}\n")
+    print(f" RFM data saved to: {PATHS['data_processed'] / 'rfm_customer_segments.csv'}\n")
     
     return rfm
 
@@ -189,7 +189,7 @@ def perform_time_series_decomposition():
     Time-Series Decomposition
     Breaks down sales into trend, seasonality, and residual components
     """
-    print("3️⃣  TIME-SERIES DECOMPOSITION")
+    print("3⃣  TIME-SERIES DECOMPOSITION")
     print("-" * 70)
     
     # Load data
@@ -203,7 +203,7 @@ def perform_time_series_decomposition():
     daily_sales = daily_sales.set_index('transaction_date')
     daily_sales = daily_sales.asfreq('D', fill_value=0)  # Ensure daily frequency
     
-    print(f"\n📊 Time-Series Data:")
+    print(f"\n Time-Series Data:")
     print("-" * 70)
     print(f"  • Date Range: {daily_sales.index.min()} to {daily_sales.index.max()}")
     print(f"  • Total Days: {len(daily_sales):,}")
@@ -248,7 +248,7 @@ def perform_time_series_decomposition():
         
         plt.tight_layout()
         plt.savefig(PATHS['reports'] / 'plots' / 'time_series_decomposition.png', dpi=300, bbox_inches='tight')
-        print(f"\n✅ Time-series decomposition saved to: {PATHS['reports'] / 'plots' / 'time_series_decomposition.png'}")
+        print(f"\n Time-series decomposition saved to: {PATHS['reports'] / 'plots' / 'time_series_decomposition.png'}")
         plt.close()
         
         # Calculate variance explained by each component
@@ -257,7 +257,7 @@ def perform_time_series_decomposition():
         resid_var = decomposition.resid.var()
         total_var = trend_var + seasonal_var + resid_var
         
-        print(f"\n💡 KEY INSIGHTS:")
+        print(f"\n KEY INSIGHTS:")
         print("-" * 70)
         print(f"  • Trend explains {trend_var/total_var*100:.1f}% of variance")
         print(f"  • Seasonality explains {seasonal_var/total_var*100:.1f}% of variance")
@@ -268,11 +268,11 @@ def perform_time_series_decomposition():
         trend_end = decomposition.trend.dropna().iloc[-1]
         trend_change = ((trend_end - trend_start) / trend_start * 100)
         
-        print(f"  • Overall Trend: {'📈 Increasing' if trend_change > 0 else '📉 Decreasing'} by {abs(trend_change):.1f}%")
+        print(f"  • Overall Trend: {' Increasing' if trend_change > 0 else ' Decreasing'} by {abs(trend_change):.1f}%")
         print(f"  • Weekly Pattern Detected: Revenue varies by ${decomposition.seasonal.max() - decomposition.seasonal.min():,.2f} within week")
         
     except Exception as e:
-        print(f"\n⚠️  Decomposition warning: {str(e)}")
+        print(f"\n  Decomposition warning: {str(e)}")
         print("   Using alternative approach...")
         
     print("\n" + "="*70 + "\n")
@@ -283,7 +283,7 @@ def perform_marketing_correlation_analysis():
     Marketing Spend vs Revenue Correlation Analysis
     Analyzes relationship between marketing campaigns and revenue
     """
-    print("4️⃣  MARKETING SPEND vs REVENUE CORRELATION")
+    print("4⃣  MARKETING SPEND vs REVENUE CORRELATION")
     print("-" * 70)
     
     # Load data
@@ -315,14 +315,14 @@ def perform_marketing_correlation_analysis():
     # Calculate correlation
     correlation = daily_revenue['revenue'].corr(daily_revenue['marketing_spend'])
     
-    print(f"\n📊 Marketing Performance Metrics:")
+    print(f"\n Marketing Performance Metrics:")
     print("-" * 70)
     print(f"  • Total Marketing Spend: ${campaigns['budget'].sum():,.2f}")
     print(f"  • Total Revenue (analysis period): ${daily_revenue['revenue'].sum():,.2f}")
     print(f"  • Number of Campaigns: {len(campaigns)}")
     print(f"  • Avg Campaign Budget: ${campaigns['budget'].mean():,.2f}")
     
-    print(f"\n📈 Correlation Analysis:")
+    print(f"\n Correlation Analysis:")
     print("-" * 70)
     print(f"  • Pearson Correlation: {correlation:.4f}")
     
@@ -354,7 +354,7 @@ def perform_marketing_correlation_analysis():
     
     roi_df = pd.DataFrame(campaign_roi).sort_values('roi', ascending=False)
     
-    print(f"\n🏆 Top 5 Campaigns by ROI:")
+    print(f"\n Top 5 Campaigns by ROI:")
     print("-" * 70)
     for i, row in roi_df.head(5).iterrows():
         print(f"  • {row['campaign']:30s}: ROI {row['roi']:7.1f}% (${row['revenue']:,.0f} revenue, ${row['budget']:,.0f} spend)")
@@ -419,10 +419,10 @@ def perform_marketing_correlation_analysis():
     
     plt.tight_layout()
     plt.savefig(PATHS['reports'] / 'plots' / 'marketing_correlation_analysis.png', dpi=300, bbox_inches='tight')
-    print(f"\n✅ Marketing correlation analysis saved to: {PATHS['reports'] / 'plots' / 'marketing_correlation_analysis.png'}")
+    print(f"\n Marketing correlation analysis saved to: {PATHS['reports'] / 'plots' / 'marketing_correlation_analysis.png'}")
     plt.close()
     
-    print(f"\n💡 KEY INSIGHTS:")
+    print(f"\n KEY INSIGHTS:")
     print("-" * 70)
     print(f"  • {strength} {direction.lower()} relationship between marketing spend and revenue")
     print(f"  • Average ROI across all campaigns: {roi_df['roi'].mean():.1f}%")
@@ -434,17 +434,17 @@ def perform_marketing_correlation_analysis():
     
     # Save campaign ROI data
     roi_df.to_csv(PATHS['data_processed'] / 'campaign_roi_analysis.csv', index=False)
-    print(f"✅ Campaign ROI data saved to: {PATHS['data_processed'] / 'campaign_roi_analysis.csv'}\n")
+    print(f" Campaign ROI data saved to: {PATHS['data_processed'] / 'campaign_roi_analysis.csv'}\n")
 
 
 def generate_summary_report():
     """Generate overall summary of statistical analyses"""
     print("\n" + "="*70)
-    print("📊 STATISTICAL ANALYSIS SUMMARY")
+    print(" STATISTICAL ANALYSIS SUMMARY")
     print("="*70)
     
     summary = """
-✅ COMPLETED ANALYSES:
+ COMPLETED ANALYSES:
 
 1. COHORT ANALYSIS
    - Tracked customer retention rates over time
@@ -466,7 +466,7 @@ def generate_summary_report():
    - Analyzed campaign-level ROI
    - Identified top-performing marketing initiatives
 
-📁 OUTPUT FILES:
+ OUTPUT FILES:
    • Cohort heatmap: reports/plots/cohort_retention_heatmap.png
    • RFM analysis: reports/plots/rfm_segmentation_analysis.png
    • Time-series: reports/plots/time_series_decomposition.png
@@ -474,7 +474,7 @@ def generate_summary_report():
    • RFM data: data/processed/rfm_customer_segments.csv
    • ROI data: data/processed/campaign_roi_analysis.csv
 
-✅ All statistical analyses completed successfully!
+ All statistical analyses completed successfully!
 """
     print(summary)
     print("="*70)
@@ -497,13 +497,13 @@ def main():
         end_time = datetime.now()
         duration = (end_time - start_time).total_seconds()
         
-        print(f"\n⏱️  Total execution time: {duration:.2f} seconds")
-        print("🎉 All analyses completed successfully!\n")
+        print(f"\n⏱  Total execution time: {duration:.2f} seconds")
+        print(" All analyses completed successfully!\n")
         
         return True
         
     except Exception as e:
-        print(f"\n❌ ERROR: {str(e)}")
+        print(f"\n ERROR: {str(e)}")
         import traceback
         traceback.print_exc()
         return False

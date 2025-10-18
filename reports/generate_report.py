@@ -19,7 +19,7 @@ def generate_executive_summary():
     """
     Generate executive summary report with key business insights
     """
-    print("📊 Generating Executive Summary Report...")
+    print(" Generating Executive Summary Report...")
     
     # Load data
     engine = create_engine(DATABASE_URL)
@@ -55,13 +55,13 @@ def generate_executive_summary():
     
     # Generate markdown report
     report = f"""
-# 📊 E-Commerce Sales Performance - Executive Summary
+#  E-Commerce Sales Performance - Executive Summary
 
 **Generated:** {datetime.now().strftime('%B %d, %Y at %I:%M %p')}
 
 ---
 
-## 🎯 Key Performance Indicators
+##  Key Performance Indicators
 
 | Metric | Value |
 |--------|-------|
@@ -74,7 +74,7 @@ def generate_executive_summary():
 
 ---
 
-## 💡 Key Findings & Insights
+##  Key Findings & Insights
 
 ### 1. Customer Segmentation Reveals Revenue Concentration
 
@@ -88,7 +88,7 @@ def generate_executive_summary():
     
     report += f"""
 
-**💎 Critical Insight:** {segment_revenue[segment_revenue['customer_segment']=='VIP']['customer_pct'].values[0]:.1f}% of customers (VIP segment) generate {segment_revenue[segment_revenue['customer_segment']=='VIP']['revenue_pct'].values[0]:.1f}% of total revenue.
+** Critical Insight:** {segment_revenue[segment_revenue['customer_segment']=='VIP']['customer_pct'].values[0]:.1f}% of customers (VIP segment) generate {segment_revenue[segment_revenue['customer_segment']=='VIP']['revenue_pct'].values[0]:.1f}% of total revenue.
 
 **Recommendation:** Implement premium retention programs for VIP customers with personalized offers, dedicated support, and exclusive benefits.
 
@@ -149,7 +149,7 @@ def generate_executive_summary():
 
 ---
 
-## 📈 Strategic Recommendations
+##  Strategic Recommendations
 
 ### Immediate Actions (0-30 days)
 
@@ -204,7 +204,7 @@ def generate_executive_summary():
 
 ---
 
-## 💰 Projected Business Impact
+##  Projected Business Impact
 
 Based on historical data and industry benchmarks, implementing these recommendations could yield:
 
@@ -217,7 +217,7 @@ Based on historical data and industry benchmarks, implementing these recommendat
 
 ---
 
-## 🎯 Success Metrics & KPIs
+##  Success Metrics & KPIs
 
 Track these metrics monthly to measure impact:
 
@@ -229,7 +229,7 @@ Track these metrics monthly to measure impact:
 
 ---
 
-## 📊 Data Quality & Methodology
+##  Data Quality & Methodology
 
 - **Analysis Period:** {df['transaction_date'].min()} to {df['transaction_date'].max()}
 - **Total Records Analyzed:** {len(df):,} completed transactions
@@ -238,7 +238,7 @@ Track these metrics monthly to measure impact:
 
 ---
 
-## 🔍 Next Steps
+##  Next Steps
 
 1. **Review & Approve** strategic recommendations with leadership
 2. **Prioritize** initiatives based on resources and expected ROI
@@ -261,14 +261,14 @@ Track these metrics monthly to measure impact:
     with open(report_path, 'w') as f:
         f.write(report)
     
-    print(f"✅ Executive summary saved to: {report_path}")
+    print(f" Executive summary saved to: {report_path}")
     
     # Also save as text for easy viewing
     txt_path = PATHS['reports'] / f'executive_summary_{datetime.now().strftime("%Y%m%d")}.txt'
     with open(txt_path, 'w') as f:
         f.write(report)
     
-    print(f"✅ Text version saved to: {txt_path}")
+    print(f" Text version saved to: {txt_path}")
     
     return report
 
@@ -277,10 +277,10 @@ if __name__ == "__main__":
     try:
         report = generate_executive_summary()
         print("\n" + "="*60)
-        print("✅ REPORT GENERATION COMPLETED!")
+        print(" REPORT GENERATION COMPLETED!")
         print("="*60)
     except Exception as e:
-        print(f"\n❌ Error generating report: {str(e)}")
+        print(f"\n Error generating report: {str(e)}")
         import traceback
         traceback.print_exc()
 

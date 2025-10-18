@@ -147,7 +147,7 @@ class ChurnPredictionModel:
             'scaler': self.scaler,
             'feature_importance': self.feature_importance
         }, filepath)
-        print(f"✅ Model saved to {filepath}")
+        print(f" Model saved to {filepath}")
     
     def load_model(self, filepath):
         """Load trained model"""
@@ -155,7 +155,7 @@ class ChurnPredictionModel:
         self.model = data['model']
         self.scaler = data['scaler']
         self.feature_importance = data['feature_importance']
-        print(f"✅ Model loaded from {filepath}")
+        print(f" Model loaded from {filepath}")
 
 
 class DemandForecastModel:
@@ -282,14 +282,14 @@ class DemandForecastModel:
             'model': self.model,
             'scaler': self.scaler
         }, filepath)
-        print(f"✅ Model saved to {filepath}")
+        print(f" Model saved to {filepath}")
     
     def load_model(self, filepath):
         """Load trained model"""
         data = joblib.load(filepath)
         self.model = data['model']
         self.scaler = data['scaler']
-        print(f"✅ Model loaded from {filepath}")
+        print(f" Model loaded from {filepath}")
 
 
 class CLVPredictionModel:
@@ -392,14 +392,14 @@ class CLVPredictionModel:
             'model': self.model,
             'scaler': self.scaler
         }, filepath)
-        print(f"✅ Model saved to {filepath}")
+        print(f" Model saved to {filepath}")
     
     def load_model(self, filepath):
         """Load trained model"""
         data = joblib.load(filepath)
         self.model = data['model']
         self.scaler = data['scaler']
-        print(f"✅ Model loaded from {filepath}")
+        print(f" Model loaded from {filepath}")
 
 
 def print_model_metrics(metrics, model_name="Model"):
@@ -407,7 +407,7 @@ def print_model_metrics(metrics, model_name="Model"):
     Print formatted model evaluation metrics
     """
     print("\n" + "="*60)
-    print(f"📊 {model_name} EVALUATION METRICS")
+    print(f" {model_name} EVALUATION METRICS")
     print("="*60)
     
     for metric, value in metrics.items():

@@ -10,7 +10,7 @@
 Comprehensive data analytics platform analyzing 2 years of e-commerce sales data (45,958 transactions, 50,000 customers, $33M revenue) from raw CSV files through actionable business insights. Demonstrates end-to-end analytics capabilities including data engineering, statistical analysis, machine learning, and interactive visualization.
 
 ### Live Demo
-- **Interactive Dashboard:** [Deploy to Streamlit Cloud](https://streamlit.io/cloud)
+- **Interactive Dashboard:** https://ecommerce-sales-analytics.streamlit.app
 - **GitHub Repository:** https://github.com/Web8080/Ecommerce_Sales_Analytics
 
 ---

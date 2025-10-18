@@ -42,6 +42,11 @@ data/processed/*.parquet
 *.db
 *.sqlite
 
+# EXCEPT - Allow cloud deployment CSV files
+!data/processed/sales_for_cloud.csv
+!data/processed/customers_for_cloud.csv
+!data/processed/products_for_cloud.csv
+
 # Model files (can be large)
 models/*.pkl
 models/*.joblib

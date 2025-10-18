@@ -511,11 +511,11 @@ Dashboard & Reports
 
 ### Detailed Setup Guide
 
-See [SETUP_GUIDE.md](SETUP_GUIDE.md) for comprehensive instructions.
+See [SETUP_GUIDE.md](docs/SETUP_GUIDE.md) for comprehensive instructions.
 
 ### Quick Start (5 minutes)
 
-See [QUICK_START.md](QUICK_START.md) for rapid deployment.
+See [QUICK_START.md](docs/QUICK_START.md) for rapid deployment.
 
 ---
 
@@ -730,8 +730,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **GitHub Repository:** https://github.com/Web8080/Ecommerce_Sales_Analytics  
 **Live Dashboard:** [Deploy to Streamlit Cloud](https://streamlit.io/cloud)  
-**Documentation:** See SETUP_GUIDE.md for detailed instructions  
-**Audit Report:** See SYSTEM_AUDIT_REPORT.md for comprehensive assessment
+**Documentation:** See [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md) for detailed instructions  
+**Audit Report:** See [docs/SYSTEM_AUDIT_REPORT.md](docs/SYSTEM_AUDIT_REPORT.md) for comprehensive assessment
 
 ---
 

@@ -1,10 +1,10 @@
-#  Complete Setup Guide - E-Commerce Analytics Platform
+# Complete Setup Guide - E-Commerce Analytics Platform
 
 This guide will walk you through setting up the entire project from scratch.
 
 ---
 
-##  Prerequisites
+## Prerequisites
 
 ### Required Software
 - **Python 3.9+** 
@@ -19,7 +19,7 @@ This guide will walk you through setting up the entire project from scratch.
 
 ---
 
-##  Step-by-Step Setup
+## Step-by-Step Setup
 
 ### Step 1: Create Virtual Environment
 
@@ -30,9 +30,9 @@ cd /Users/user/End-to-End_E-Commerce_Sales_Performance_Analytics_Platform
 python3 -m venv venv
 
 # Activate it
-source venv/bin/activate  # macOS/Linux
+source venv/bin/activate # macOS/Linux
 # OR
-venv\Scripts\activate  # Windows
+venv\Scripts\activate # Windows
 ```
 
 ### Step 2: Install Dependencies
@@ -162,7 +162,7 @@ Should show ~450,000+ records.
 
 ---
 
-##  Launch the Dashboard
+## Launch the Dashboard
 
 ```bash
 streamlit run dashboards/streamlit_app.py
@@ -178,7 +178,7 @@ Open your browser and visit **http://localhost:8501**
 
 ---
 
-##  Jupyter Notebooks
+## Jupyter Notebooks
 
 ### Launch Jupyter
 
@@ -202,7 +202,7 @@ You can create notebooks for:
 
 ---
 
-##  Run Machine Learning Models
+## Run Machine Learning Models
 
 ### Example: Train Churn Prediction Model
 
@@ -238,35 +238,35 @@ python train_models.py
 
 ---
 
-##  Project Structure Overview
+## Project Structure Overview
 
 ```
 End-to-End_E-Commerce_Sales_Performance_Analytics_Platform/
  data/
-    generate_data.py          #  DONE - Run this first
-    raw/                      # Generated CSV files
-    processed/                # Cleaned data
+ generate_data.py # DONE - Run this first
+ raw/ # Generated CSV files
+ processed/ # Cleaned data
  database/
-    schema.sql                #  DONE - Database schema
-    load_data.py              #  DONE - Load data script
+ schema.sql # DONE - Database schema
+ load_data.py # DONE - Load data script
  src/
-    models.py                 #  DONE - ML models
-    utils.py                  #  DONE - Utility functions
+ models.py # DONE - ML models
+ utils.py # DONE - Utility functions
  dashboards/
-    streamlit_app.py          #  DONE - Interactive dashboard
+ streamlit_app.py # DONE - Interactive dashboard
  notebooks/
-    01_data_cleaning_eda.ipynb # ⏳ IN PROGRESS
- reports/                      # Generated reports & plots
- models/                       # Saved ML models
- requirements.txt              #  DONE
- config.py                     #  DONE
- README.md                     #  DONE
- .env                          #   YOU NEED TO CREATE THIS
+ 01_data_cleaning_eda.ipynb # ⏳ IN PROGRESS
+ reports/ # Generated reports & plots
+ models/ # Saved ML models
+ requirements.txt # DONE
+ config.py # DONE
+ README.md # DONE
+ .env # YOU NEED TO CREATE THIS
 ```
 
 ---
 
-##  Verification Checklist
+## Verification Checklist
 
 After setup, verify each component:
 
@@ -281,7 +281,7 @@ After setup, verify each component:
 
 ---
 
-##  Troubleshooting
+## Troubleshooting
 
 ### Issue: PostgreSQL Connection Error
 
@@ -343,7 +343,7 @@ python -m ipykernel install --user --name=ecommerce_env
 
 ---
 
-##  Next Steps
+## Next Steps
 
 ### 1. Explore the Dashboard
 - Open http://localhost:8501
@@ -368,7 +368,7 @@ python -m ipykernel install --user --name=ecommerce_env
 
 ---
 
-##  Learning Resources
+## Learning Resources
 
 ### Understand the Code
 - **config.py** - Configuration management
@@ -386,14 +386,14 @@ python -m ipykernel install --user --name=ecommerce_env
 
 ---
 
-##  Tips
+## Tips
 
 1. **Keep virtual environment activated** when working on the project
 2. **Commit to Git regularly** to track your progress
 
 ---
 
-##  Getting Help
+## Getting Help
 
 If you encounter issues:
 
@@ -405,17 +405,14 @@ If you encounter issues:
 
 ---
 
-##  Setup Complete!
+## Setup Complete!
 
 You now have a fully functional e-commerce analytics platform!
 
 **What you've built:**
--  500K+ transaction database
--  Star schema data warehouse
--  Interactive Streamlit dashboard
--  ML models ready to train
--  Analysis notebooks
--  Professional project structure
-
-
-
+- 500K+ transaction database
+- Star schema data warehouse
+- Interactive Streamlit dashboard
+- ML models ready to train
+- Analysis notebooks
+- project structure

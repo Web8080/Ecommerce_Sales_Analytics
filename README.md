@@ -78,79 +78,79 @@ Comprehensive data analytics platform analyzing 2 years of e-commerce sales data
 
 ```
 Ecommerce_Sales_Analytics/
-├── README.md                              # Complete documentation
-├── requirements.txt                       # Python dependencies (cloud)
-├── requirements-full.txt                  # Full dependencies (local)
-├── config.py                              # Configuration management
-├── train_ml_models.py                     # ML model training script
-├── generate_ml_plots.py                   # ML visualization generator
-├── test_connection.py                     # Database diagnostic tool
+├── README.md # Complete documentation
+├── requirements.txt # Python dependencies (cloud)
+├── requirements-full.txt # Full dependencies (local)
+├── config.py # Configuration management
+├── train_ml_models.py # ML model training script
+├── generate_ml_plots.py # ML visualization generator
+├── test_connection.py # Database diagnostic tool
 │
 ├── data/
-│   ├── generate_data.py                  # Synthetic data generator
-│   ├── raw/                              # Generated CSV files (gitignored)
-│   │   ├── customers.csv                 # 50,000 customers
-│   │   ├── products.csv                  # 1,000 products
-│   │   ├── transactions.csv              # 45,958 transactions
-│   │   ├── returns.csv                   # 1,656 returns
-│   │   └── marketing_campaigns.csv       # 12 campaigns
-│   └── processed/                        # Analysis outputs
-│       ├── sales_for_cloud.csv           # Cloud deployment data
-│       ├── customers_for_cloud.csv
-│       ├── products_for_cloud.csv
-│       ├── rfm_customer_segments.csv
-│       ├── campaign_roi_analysis.csv
-│       ├── high_risk_customers.csv
-│       └── high_value_customers.csv
+│ ├── generate_data.py # Synthetic data generator
+│ ├── raw/ # Generated CSV files (gitignored)
+│ │ ├── customers.csv # 50,000 customers
+│ │ ├── products.csv # 1,000 products
+│ │ ├── transactions.csv # 45,958 transactions
+│ │ ├── returns.csv # 1,656 returns
+│ │ └── marketing_campaigns.csv # 12 campaigns
+│ └── processed/ # Analysis outputs
+│ ├── sales_for_cloud.csv # Cloud deployment data
+│ ├── customers_for_cloud.csv
+│ ├── products_for_cloud.csv
+│ ├── rfm_customer_segments.csv
+│ ├── campaign_roi_analysis.csv
+│ ├── high_risk_customers.csv
+│ └── high_value_customers.csv
 │
 ├── database/
-│   ├── schema.sql                        # Star schema (7 tables, 3 views)
-│   └── load_data.py                      # Automated ETL pipeline
+│ ├── schema.sql # Star schema (7 tables, 3 views)
+│ └── load_data.py # Automated ETL pipeline
 │
 ├── src/
-│   ├── models.py                         # ML model classes
-│   ├── utils.py                          # Utility functions (RFM, cohort)
-│   ├── statistical_analysis.py           # Statistical analysis script
-│   ├── snowflake_connector.py            # Snowflake integration
-│   └── matillion_integration.py          # Matillion ETL integration
+│ ├── models.py # ML model classes
+│ ├── utils.py # Utility functions (RFM, cohort)
+│ ├── statistical_analysis.py # Statistical analysis script
+│ ├── snowflake_connector.py # Snowflake integration
+│ └── matillion_integration.py # Matillion ETL integration
 │
 ├── dashboards/
-│   ├── streamlit_app.py                  # Local dashboard (PostgreSQL)
-│   ├── streamlit_app_cloud.py            # Cloud dashboard (CSV)
-│   └── dashboard_UI_SCREENSHOTS/         # Dashboard screenshots (8)
+│ ├── streamlit_app.py # Local dashboard (PostgreSQL)
+│ ├── streamlit_app_cloud.py # Cloud dashboard (CSV)
+│ └── dashboard_UI_SCREENSHOTS/ # Dashboard screenshots (8)
 │
 ├── notebooks/
-│   ├── 01_data_cleaning_eda.ipynb       # Data cleaning & EDA
-│   ├── 02_statistical_analysis.ipynb    # Advanced analytics
-│   └── 03_machine_learning_models.ipynb # ML models
+│ ├── 01_data_cleaning_eda.ipynb # Data cleaning & EDA
+│ ├── 02_statistical_analysis.ipynb # Advanced analytics
+│ └── 03_machine_learning_models.ipynb # ML models
 │
 ├── reports/
-│   ├── generate_report.py                # Report automation
-│   └── plots/                            # Visualizations (12 plots)
-│       ├── cohort_retention_heatmap.png
-│       ├── rfm_segmentation_analysis.png
-│       ├── time_series_decomposition.png
-│       ├── marketing_correlation_analysis.png
-│       ├── ml_churn_model_performance.png
-│       ├── ml_clv_model_performance.png
-│       ├── ml_models_performance_summary.png
-│       └── ml_business_impact.png
+│ ├── generate_report.py # Report automation
+│ └── plots/ # Visualizations (12 plots)
+│ ├── cohort_retention_heatmap.png
+│ ├── rfm_segmentation_analysis.png
+│ ├── time_series_decomposition.png
+│ ├── marketing_correlation_analysis.png
+│ ├── ml_churn_model_performance.png
+│ ├── ml_clv_model_performance.png
+│ ├── ml_models_performance_summary.png
+│ └── ml_business_impact.png
 │
-├── models/                               # Trained ML models
-│   ├── churn_prediction_model.pkl
-│   ├── demand_forecast_model.pkl
-│   └── clv_prediction_model.pkl
+├── models/ # Trained ML models
+│ ├── churn_prediction_model.pkl
+│ ├── demand_forecast_model.pkl
+│ └── clv_prediction_model.pkl
 │
-├── docs/                                 # Documentation (13 files)
-│   ├── SETUP_GUIDE.md
-│   ├── QUICK_START.md
-│   ├── DEPLOYMENT_CHECKLIST.md
-│   ├── STREAMLIT_CLOUD_DEPLOYMENT.md
-│   ├── SYSTEM_AUDIT_REPORT.md
-│   ├── STATISTICAL_ANALYSIS_SUMMARY.md
-│   └── executive_summary_20251018.md
+├── docs/ # Documentation (13 files)
+│ ├── SETUP_GUIDE.md
+│ ├── QUICK_START.md
+│ ├── DEPLOYMENT_CHECKLIST.md
+│ ├── STREAMLIT_CLOUD_DEPLOYMENT.md
+│ ├── SYSTEM_AUDIT_REPORT.md
+│ ├── STATISTICAL_ANALYSIS_SUMMARY.md
+│ └── executive_summary_20251018.md
 │
-└── tests/                                # Test files
+└── tests/ # Test files
 ```
 
 ---
@@ -195,7 +195,7 @@ streamlit run dashboards/streamlit_app.py
 
 Dashboard will be available at: http://localhost:8501
 
-**Quick Start Guide:** See [docs/QUICK_START.md](docs/QUICK_START.md)  
+**Quick Start Guide:** See [docs/QUICK_START.md](docs/QUICK_START.md) 
 **Detailed Setup:** See [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md)
 
 ---
@@ -489,20 +489,20 @@ python reports/generate_report.py
 - **Features:** 9 engineered features
 - **Accuracy:** 100%
 - **Top Feature:** Recency (96% importance)
-- **Application:** Identify at-risk customers for retention
+- **:** Identify at-risk customers for retention
 
 ### CLV Prediction Model
 - **Algorithm:** Random Forest Regressor
 - **Features:** 7 customer behavior features
 - **R² Score:** 0.9982
 - **MAPE:** 4.90%
-- **Application:** VIP program targeting, marketing ROI
+- **:** VIP program targeting, marketing ROI
 
 ### Demand Forecasting Model
 - **Algorithm:** XGBoost Regressor
 - **Features:** 14 time-series features
 - **MAPE:** 29.52%
-- **Application:** Inventory optimization
+- **:** Inventory optimization
 
 ---
 
@@ -539,11 +539,10 @@ MIT License - see [LICENSE](LICENSE) file
 
 ## Contact & Links
 
-**GitHub:** https://github.com/Web8080/Ecommerce_Sales_Analytics  
-**Live Dashboard:** https://ecommerce-sales-analytics.streamlit.app  
+**GitHub:** https://github.com/Web8080/Ecommerce_Sales_Analytics 
+**Live Dashboard:** https://ecommerce-sales-analytics.streamlit.app 
 **Documentation:** [docs/](docs/)
 
 ---
 
 **Last Updated:** October 18, 2025
-

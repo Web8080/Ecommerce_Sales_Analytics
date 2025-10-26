@@ -1,12 +1,10 @@
-#  Statistical Analysis - COMPLETE
+# Statistical Analysis - COMPLETE
 
-
-
-###  CONFIRMATION: **ALL IMPLEMENTED!**
+### CONFIRMATION: **ALL IMPLEMENTED!**
 
 ---
 
-##  What's Been Built
+## What's Been Built
 
 ### 1. **Cohort Analysis (Customer Retention Rates)** 
 
@@ -15,7 +13,7 @@
 **Features:**
 - Tracks customer retention rates month-over-month
 - Creates cohort matrix showing % of customers returning each period
-- Generates professional heatmap visualization
+- Generates heatmap visualization
 - Calculates average retention by period
 - Identifies retention drop-off patterns
 
@@ -37,12 +35,12 @@
 **Features:**
 - Calculates R, F, M scores for each customer (1-5 scale)
 - Segments customers into actionable categories:
-  - **Champions** (RFM 13-15): Best customers
-  - **Loyal Customers** (RFM 11-12): Regular purchasers
-  - **Potential Loyalist** (RFM 9-10): Growing customers
-  - **At Risk** (RFM 7-8): Need attention
-  - **Needs Attention** (RFM 5-6): Declining engagement
-  - **Lost** (RFM 3-4): Churned customers
+ - **Champions** (RFM 13-15): Best customers
+ - **Loyal Customers** (RFM 11-12): Regular purchasers
+ - **Potential Loyalist** (RFM 9-10): Growing customers
+ - **At Risk** (RFM 7-8): Need attention
+ - **Needs Attention** (RFM 5-6): Declining engagement
+ - **Lost** (RFM 3-4): Churned customers
 - Analyzes revenue contribution by segment
 - Calculates customer lifetime value per segment
 
@@ -64,9 +62,9 @@
 
 **Features:**
 - Decomposes daily revenue into 3 components:
-  - **Trend**: Long-term direction (increasing/decreasing)
-  - **Seasonal**: Weekly/monthly patterns
-  - **Residual**: Random noise/irregular events
+ - **Trend**: Long-term direction (increasing/decreasing)
+ - **Seasonal**: Weekly/monthly patterns
+ - **Residual**: Random noise/irregular events
 - Uses statsmodels seasonal_decompose
 - Calculates variance explained by each component
 - Identifies seasonality patterns (7-day weekly cycle)
@@ -78,7 +76,7 @@
 **Example Insights:**
 - "Trend explains 45.3% of variance"
 - "Seasonality explains 32.8% of variance"
-- "Overall Trend:  Increasing by 12.4%"
+- "Overall Trend: Increasing by 12.4%"
 - "Weekly Pattern Detected: Revenue varies by $45,678 within week"
 
 ---
@@ -108,7 +106,7 @@
 
 ---
 
-##  How to Run
+## How to Run
 
 ### Option 1: Run Complete Statistical Analysis
 
@@ -137,10 +135,10 @@ python src/statistical_analysis.py
 
 ```python
 from src.statistical_analysis import (
-    perform_cohort_analysis,
-    perform_rfm_segmentation,
-    perform_time_series_decomposition,
-    perform_marketing_correlation_analysis
+ perform_cohort_analysis,
+ perform_rfm_segmentation,
+ perform_time_series_decomposition,
+ perform_marketing_correlation_analysis
 )
 
 # Run specific analysis
@@ -172,7 +170,7 @@ cohort_retention = cohort_analysis(df, 'customer_id', 'transaction_date')
 
 ---
 
-##  Generated Files
+## Generated Files
 
 After running `python src/statistical_analysis.py`:
 
@@ -188,7 +186,7 @@ After running `python src/statistical_analysis.py`:
 
 ---
 
-##  Sample Output
+## Sample Output
 
 When you run the script, you'll see:
 
@@ -197,7 +195,7 @@ When you run the script, you'll see:
  ADVANCED STATISTICAL ANALYSIS
 ======================================================================
 
-1⃣  COHORT ANALYSIS (Customer Retention Rates)
+1⃣ COHORT ANALYSIS (Customer Retention Rates)
 ----------------------------------------------------------------------
 
  Cohort Retention Matrix (%):
@@ -206,23 +204,23 @@ When you run the script, you'll see:
 
  Average Retention by Period:
 ----------------------------------------------------------------------
-  Month 0: 100.0% of cohort returns
-  Month 1: 45.2% of cohort returns
-  Month 2: 32.8% of cohort returns
-  ...
+ Month 0: 100.0% of cohort returns
+ Month 1: 45.2% of cohort returns
+ Month 2: 32.8% of cohort returns
+ ...
 
  Cohort heatmap saved to: reports/plots/cohort_retention_heatmap.png
 
  KEY INSIGHTS:
 ----------------------------------------------------------------------
-  • Month 1 Retention: 45.2% of customers return
-  • Month 3 Retention: 28.4% still active
-  • Month 6 Retention: 18.7% long-term customers
-  • Retention drop: 26.5% from month 1 to 6
+ • Month 1 Retention: 45.2% of customers return
+ • Month 3 Retention: 28.4% still active
+ • Month 6 Retention: 18.7% long-term customers
+ • Retention drop: 26.5% from month 1 to 6
 
 ======================================================================
 
-2⃣  RFM SEGMENTATION (Recency, Frequency, Monetary Value)
+2⃣ RFM SEGMENTATION (Recency, Frequency, Monetary Value)
 ----------------------------------------------------------------------
 [RFM statistics and segment analysis]
 ...
@@ -230,38 +228,36 @@ When you run the script, you'll see:
 
 ---
 
-##  Implementation Checklist
+## Implementation Checklist
 
 - [x] **Cohort Analysis**
-  - [x] Retention matrix calculation
-  - [x] Heatmap visualization
-  - [x] Period-over-period analysis
-  - [x] Key insights generation
+ - [x] Retention matrix calculation
+ - [x] Heatmap visualization
+ - [x] Period-over-period analysis
+ - [x] Key insights generation
 
 - [x] **RFM Segmentation**
-  - [x] R-F-M score calculation (1-5 scale)
-  - [x] Customer segmentation (6 categories)
-  - [x] Revenue by segment analysis
-  - [x] 4-panel visualization
-  - [x] Data export (CSV)
+ - [x] R-F-M score calculation (1-5 scale)
+ - [x] Customer segmentation (6 categories)
+ - [x] Revenue by segment analysis
+ - [x] 4-panel visualization
+ - [x] Data export (CSV)
 
 - [x] **Time-Series Decomposition**
-  - [x] Trend extraction
-  - [x] Seasonal component identification
-  - [x] Residual analysis
-  - [x] Variance decomposition
-  - [x] 4-panel decomposition plot
+ - [x] Trend extraction
+ - [x] Seasonal component identification
+ - [x] Residual analysis
+ - [x] Variance decomposition
+ - [x] 4-panel decomposition plot
 
 - [x] **Marketing Correlation**
-  - [x] Pearson correlation calculation
-  - [x] Campaign ROI analysis
-  - [x] Scatter plot with trendline
-  - [x] Top campaigns identification
-  - [x] Time-series overlay visualization
+ - [x] Pearson correlation calculation
+ - [x] Campaign ROI analysis
+ - [x] Scatter plot with trendline
+ - [x] Top campaigns identification
+ - [x] Time-series overlay visualization
 
 ---
-
-
 
 **Cohort Analysis:**
 > "I performed cohort analysis to track customer retention rates over time, which revealed that 45% of customers return after month 1, declining to 18% by month 6. This analysis informed our retention strategy and helped prioritize re-engagement campaigns."
@@ -277,7 +273,7 @@ When you run the script, you'll see:
 
 ---
 
-##  Technical Details
+## Technical Details
 
 ### Libraries Used
 - **pandas**: Data manipulation
@@ -294,16 +290,13 @@ When you run the script, you'll see:
 
 ---
 
-##  COMPLETE!
-
+## COMPLETE!
 
 You can:
-1.  Run the complete analysis: `python src/statistical_analysis.py`
-2.  Use individual functions in Jupyter notebooks
-3.  Integrate into dashboards or reports
+1. Run the complete analysis: `python src/statistical_analysis.py`
+2. Use individual functions in Jupyter notebooks
+3. Integrate into dashboards or reports
 
 ---
 
 **Questions or issues?** Check the code comments in `src/statistical_analysis.py` or `src/utils.py`
-
-
